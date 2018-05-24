@@ -17,40 +17,6 @@ typedef struct extra{
 }TipoExtra;
 
 /*
-void quicksort(TipoString* values[], int begin, int end, int posicaoInicial[]){
-	int i, j, pivo;
-	TipoString* aux;
-	i = begin;
-	j = end-1;
-	pivo = values[(begin + end) / 2]->tamanhoString;
-	while(i <= j){
-		while(values[i]->tamanhoString > pivo && i < end){
-			i++;
-		}
-		while(values[j]->tamanhoString < pivo && j > begin){
-			j--;
-		}
-		if(i <= j){
-			if(values[i]->tamanhoString == values[j]->tamanhoString && posicaoInicial[i] < posicaoInicial[j]){
-				i++;
-				j--;	
-			}else{
-				aux = values[i];
-				values[i] = values[j];
-				values[j] = aux;
-				i++;
-				j--;
-			}
-		}
-	}
-	if(j > begin){
-		quicksort(values, begin, j+1, posicaoInicial);
-	}
-	if(i < end){
-		quicksort(values, i, end, posicaoInicial);
-	}
-}
-
 int compare_name_stable(const void *a, const void *b)
 {
     struct person *pa = (struct person *) a;
